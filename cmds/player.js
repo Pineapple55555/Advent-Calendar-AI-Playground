@@ -5,6 +5,8 @@ class Player {
         this.z = z
         this.headLoc = -100
         this.speed = 10
+        this.isJumping = false
+        this.isFalling = false
     }
 
     move() {
@@ -12,8 +14,28 @@ class Player {
     }
 }
 
-
 function movementUpdate() {
+    if (calendarCamera) {
+        if (pressedKeys.d) {
+            z += speed
+          }
+          if (pressedKeys.w) {
+            y -= speed
+          }
+          if (pressedKeys.a) {
+            z -= speed
+          }
+          if (pressedKeys.s) {
+            y += speed
+          }
+          console.error(rotY,rotX)
+    }
+    else {
+        playerMovement()
+    }
+}
+
+function playerMovement() {
 
     if (pressedKeys.w) {
       x += cos(rotY) * speed; // Move forward
@@ -32,22 +54,23 @@ function movementUpdate() {
       z += sin(rotY + PI / 2) * speed;
     }
   
-    console.log(isJumping, isFalling)
+    //console.error(isJumping, isFalling)
     // falling
     if (isJumping) {
       // finished jumping
-      if (y <= -40 + headHeight) {
+      if (y <= -60 + headHeight) {
         isJumping = false
         isFalling = true
       }
-      // starting to jump
+      // starting to jump (up)
       else {
-        y -= 10
+        y -= 5
       }
     }
     if (isFalling) {
-      if (y >= headHeight) {
-        y -= 5
+      if (y < headHeight) {
+        // falling (down)
+        y += 5
       }
       else {
         isFalling = false
