@@ -1,6 +1,7 @@
 
 function setup() {
   setupLandscape()
+  playmusic()
 }
 
 function draw() {
