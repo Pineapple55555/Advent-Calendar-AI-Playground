@@ -3,7 +3,6 @@ function setup() {
   setupCamera()
   setupLandscape()
   playmusic()
-  //setupCalendar()
 }
 
 function draw() {
