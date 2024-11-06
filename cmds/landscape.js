@@ -1,5 +1,6 @@
 
 let objectsList = [];
+let calendarList = [];
 
 class newObject {
   constructor(name, x,y,z, colour, size, interactable) {
@@ -43,51 +44,31 @@ class newCalendar {
   }
 }
 
+function setupLandscape() { setupBase() ; setupCalendar()} ; function drawLandscape() { drawBase() ; drawCalendar()}
 
-function setupLandscape() {
-    canvas = createCanvas(windowWidth, windowHeight, WEBGL);
-    canvas.mouseClicked(requestPointerLock); // Request pointer lock on click
+// set up canvas, floor and sky
+function setupBase() {
+  canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+  canvas.mouseClicked(requestPointerLock); // Request pointer lock on click
+  // floor
+  theFloor = new newObject("theFloor",0,0,0,[100, 100, 100, 50], [1000, 1000], false)
+  objectsList.push(theFloor)
+}
+function drawBase() {
+  background(200);
 
-    // floor
-    theFloor = new newObject("theFloor",0,0,0,[100, 100, 100, 50], [1000, 1000], false)
-    objectsList.push(theFloor)
+  theFloor.display("translate(0, 50, 0);rotateX(HALF_PI);plane(1000, 1000);")
+}
 
-    // other objects
-    purpleBox = new newObject("purpleBox",0,0,0,[150, 70, 255], 100, true)
-    objectsList.push(purpleBox)
+// set up calendar
+function setupCalendar() {
+  // other objects
+  purpleBox = new newObject("purpleBox",0,0,0,[150, 70, 255], 100, true)
+  calendarList.push(purpleBox)
+}
 
-    calendarTemp = new newObject("calendarTemp",600,-500,0,[0, 0, 255], [100, 1000, 1000], true)
-    objectsList.push(calendarTemp)
+function drawCalendar() {
+  purpleBox.display("box(this.size)")
+}
 
-   
-
-    //calender = new newCalendar(0,-50,0)
-    //calender.preload()
-
-    // set up light here
-
-
-  }
-  
-  function drawLandscape() {
-    background(200);
-
-    theFloor.display("translate(0, 50, 0);rotateX(HALF_PI);plane(1000, 1000);")
-
-    // Render a central square (or box)
-
-    purpleBox.display("box(this.size)")
-    calendarTemp.display("box(this.size)")
-
-    
-    //calender.display()
-
-
-    // draw all objects with no extras
-    /*for (let i of objectsList) {
-
-    } */
-
-
-  }
 
