@@ -48,14 +48,18 @@ function setupLandscape() {
     canvas = createCanvas(windowWidth, windowHeight, WEBGL);
     canvas.mouseClicked(requestPointerLock); // Request pointer lock on click
 
+    // floor
+    theFloor = new newObject("theFloor",0,0,0,[100, 100, 100, 50], [1000, 1000], false)
+    objectsList.push(theFloor)
+
+    // other objects
     purpleBox = new newObject("purpleBox",0,0,0,[150, 70, 255], 100, true)
     objectsList.push(purpleBox)
 
     calendarTemp = new newObject("calendarTemp",600,-500,0,[0, 0, 255], [100, 1000, 1000], true)
     objectsList.push(calendarTemp)
 
-    theFloor = new newObject("theFloor",0,0,0,[100, 100, 100, 50], [1000, 1000], false)
-    objectsList.push(theFloor)
+   
 
     //calender = new newCalendar(0,-50,0)
     //calender.preload()
