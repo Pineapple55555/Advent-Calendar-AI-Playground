@@ -17,6 +17,7 @@ let z = 200; // Player's position on the z-axis
 let playerCamera;
 let calcCamera;
 let randomBox;
+let camRay;
 
 let rotY = 0; // Horizontal rotation (left-right)
 let rotX = 0; // Vertical rotation (up-down)
@@ -27,28 +28,14 @@ let isFalling = false
 
 function setupCamera() {
   fov = PI / 3 ;
-  //let randomBoxPos = randomBox.position
+  camRay = new theRayBeam("rayBeam",0,0,0)
 }
 
 function drawCamera() {
   calendarCamera? calPerson() : firstPerson()
   movementUpdate()
-  drawBeam()
+  camRay.drawBeam()
 
-}
-
-function drawBeam() {
-
-  let beamLength = 500; // Adjust for desired beam length
-  let beamX = camX + beamLength * cos(rotY) * cos(rotX);
-  let beamY = camY + beamLength * sin(rotX) * cos(rotX);
-  let beamZ = camZ + beamLength * sin(rotY) * cos(rotX);
-
-  push();
-  stroke(0, 0, 255); // Color of the beam
-  strokeWeight(2);
-  line(camX, camY, camZ, beamX, beamY, beamZ); // Extend beam in positive z-direction
-  pop();
 }
 
 function calPerson() {

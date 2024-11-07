@@ -63,13 +63,14 @@ function drawBase() {
 // set up calendar
 function setupCalendar() {
   // other objects
-  for (let i = 0; i < 5; i++) {   
-    for (let j = 0; j < 5; j++) {
-      purpleBox = new newObject((1+","+j),0,i*-100,(j*100)+350,[150, 70, 255], 100, true)
+  for (let i = 0; i < 5; i+=1) {   
+    for (let j = 0; j < 5; j+=1) {
+      purpleBox = new newObject((i+","+j),0,i*-100,(j*100)+350,[150, 70, 255], 100, true)
       calendarList.push(purpleBox)
     }
 
   }
+  console.log(calendarList)
 } 
 
 function drawCalendar() {
