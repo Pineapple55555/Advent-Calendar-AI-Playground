@@ -1,35 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Hamter</title>
 
+    <!-- Stylesheet -->
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <!-- p5.js Libraries -->
     <script src="libraries/p5.min.js"></script>
     <script src="libraries/p5.sound.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 
-    <!--
+    <!-- Three.js Library and STL Loader -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://threejs.org/examples/js/loaders/STLLoader.js"></script>
-    -->
 
-
-    <script src="cmds/landscape.js"></script>
+    <!-- Custom JavaScript Modules for Functionality -->
+    <script src="cmds/landscape.js" ></script>
     <script src="cmds/interationManager.js"></script>
-    <script src="cmds/cameraManager.js"></script>
-    <script src="cmds/keyManager.js"></script>
-    <script src="cmds/player.js"></script>
-    <script src="cmds/music.js"></script>
     
+    <script src="cmds/keyManager.js" ></script>
+    <script src="cmds/player.js" ></script>
+    <script src="cmds/music.js" ></script>
 
-  </head>
-
-  <body>
-    <script src="sketch.js"></script>
-  </body>
-</html> 
-
+    <!-- Main JavaScript for STL Model Rendering and p5 Setup -->
+    <script src="cmds/calendarManager.js" ></script>
+</head>
+<body>
+    <!-- Main sketch file, which ties everything together -->
+    <script src="sketch.js" ></script>
+    <script src="cmds/cameraManager.js" ></script>
+</body>
+</html>

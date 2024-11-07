@@ -1,7 +1,9 @@
 
 function setup() {
+
   setupCamera()
   setupLandscape()
+  //setupCal()
   playmusic()
 }
 
@@ -14,3 +16,4 @@ function draw() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+

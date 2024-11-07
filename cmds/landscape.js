@@ -46,7 +46,6 @@ class newCalendar {
 
 function setupLandscape() { setupBase() ; setupCalendar()} ; function drawLandscape() { drawBase() ; drawCalendar()}
 
-
 // set up canvas, floor and sky
 function setupBase() {
   canvas = createCanvas(windowWidth, windowHeight, WEBGL);
@@ -61,15 +60,12 @@ function drawBase() {
   theFloor.display("translate(0, 50, 0);rotateX(HALF_PI);plane(1000, 1000);")
 }
 
-
 // set up calendar
 function setupCalendar() {
   // other objects
-  for (let i = 0; i < 5; i++) {
-    purpleBox = new newObject("purpleBox",0,i*-100,350,[150, 70, 255], 100, true)
-    calendarList.push(purpleBox)
+  for (let i = 0; i < 5; i++) {   
     for (let j = 0; j < 5; j++) {
-      purpleBox = new newObject("purpleBox",0,i*-100,(j*100)+350,[150, 70, 255], 100, true)
+      purpleBox = new newObject((1+","+j),0,i*-100,(j*100)+350,[150, 70, 255], 100, true)
       calendarList.push(purpleBox)
     }
 
@@ -83,3 +79,11 @@ function drawCalendar() {
 }
 
 
+function setupCoolBoxes() {
+  let boxPos = createVector(0,0,0)
+  
+
+} 
+function drawCoolBoxes() {
+  
+}

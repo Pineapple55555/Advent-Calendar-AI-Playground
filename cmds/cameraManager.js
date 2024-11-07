@@ -33,6 +33,23 @@ function setupCamera() {
 function drawCamera() {
   calendarCamera? calPerson() : firstPerson()
   movementUpdate()
+  drawBeam()
+
+}
+
+function drawBeam() {
+
+  let beamLength = 500; // Adjust for desired beam length
+  let beamX = camX + beamLength * cos(rotY) * cos(rotX);
+  let beamY = camY + beamLength * sin(rotX) * cos(rotX);
+  let beamZ = camZ + beamLength * sin(rotY) * cos(rotX);
+  console.warn(beamY)
+
+  push();
+  stroke(0, 0, 255); // Color of the beam
+  strokeWeight(2);
+  line(camX, camY, camZ, beamX, beamY, beamZ); // Extend beam in positive z-direction
+  pop();
 }
 
 function calPerson() {
@@ -58,6 +75,8 @@ function firstPerson() {
   playerCamera = camera(x, y, z, // Camera position (the player's position)
          camX, camY, camZ, // Target position (where the camera is looking)
          0, 1, 0); // Up vector
+  
+  checkRaycast(camX, camY, camZ)
 
 }
 
