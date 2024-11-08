@@ -14,7 +14,7 @@ function keyPressed() {
   
     }
     if (key === "q") {
-      hudPopup()
+      hudToggle()
     }
   }
   function keyReleased() {

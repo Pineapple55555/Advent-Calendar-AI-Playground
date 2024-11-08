@@ -1,6 +1,14 @@
 let hud = false
-function hudPopup() {
+
+function hudToggle() {
     hud = !hud
+    console.log("hudtoggled")
+}
+
+function hudPopup() {
+  if (hud) {
+    hudDraw()
+  }
 }
 
 function hudSetup() {

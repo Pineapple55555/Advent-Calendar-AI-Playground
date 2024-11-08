@@ -12,7 +12,6 @@ function checkRaycast(camX, camY, camZ) {
         intersectedBoxes.push(obj);
       }
     }
-    console.warn(intersectedBoxes)
   }
 
 
@@ -21,8 +20,8 @@ function checkRaycast(camX, camY, camZ) {
 class theRayBeam {
   constructor(name, camX,cameY,camZ) {
     this.name = name
-    this.amount = -400
-    this.beamLength = 500; // Adjust for desired beam length
+    this.amount = -470
+    this.beamLength = 100; // Adjust for desired beam length
     this.theBeam
     this.startX
     this.startY
