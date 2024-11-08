@@ -13,8 +13,8 @@ function keyPressed() {
       }
   
     }
-    if (key === "q") {
-      hudToggle()
+  if (key === "q") {
+    hudToggle()
     }
   }
   function keyReleased() {

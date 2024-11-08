@@ -12,6 +12,7 @@ function checkRaycast(camX, camY, camZ) {
         intersectedBoxes.push(obj);
       }
     }
+    return intersectedBoxes
   }
 
 

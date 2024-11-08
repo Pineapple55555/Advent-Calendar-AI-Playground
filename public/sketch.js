@@ -1,6 +1,7 @@
 let sound;
 let gainNode;
 let userInteracted = false; // Flag to track user interaction
+let menuFont;
 
 function preload() {
   sound = loadSound('resources/Music.mp3');
@@ -39,8 +40,13 @@ function setup() {
 function draw() {
   frameRate(60);
   drawLandscape();
-  drawCamera();
-  hudDraw
+    drawCamera();
+  if (hud) {
+    hudDraw()
+
+  }
+  
+  
 }
 
 function windowResized() {
@@ -52,3 +58,4 @@ async function callGPT() {
   const response = await getChatGPTResponse(message); // Call the function from gptPromptManager.js
   console.log("GPT Response: ", response); // Handle the response as needed
 }
+

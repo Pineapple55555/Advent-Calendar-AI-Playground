@@ -48,7 +48,7 @@ function calPerson() {
   calcCamera = camera(x, y, z, // Camera position (the player's position)
          camX, y, z, // Target position (where the camera is looking)
          0, 1, 0); // Up vector
-
+         
   checkRaycast(camX, camY, camZ)
 }
 function firstPerson() {

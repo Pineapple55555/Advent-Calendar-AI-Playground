@@ -25,25 +25,6 @@ class newObject {
   }
 }
 
-class newCalendar {
-  constructor(x, y, z) {
-    this.x = x
-    this.y = y
-    this.z = z
-    this.model = null
-    this.path = "../resources/box.stl"
-  }
-  preload() {
-    // Load the STL file from the resources folder
-    this.model = loadModel("../resources/box.stl");
-  }
-  display() {
-    if (this.model) {
-      model(this.model)
-    }
-  }
-}
-
 function setupLandscape() { setupBase() ; setupCalendar()} ; function drawLandscape() { drawBase() ; drawCalendar()}
 
 // set up canvas, floor and sky

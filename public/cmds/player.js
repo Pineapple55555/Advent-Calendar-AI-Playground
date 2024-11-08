@@ -28,7 +28,6 @@ function movementUpdate() {
           if (pressedKeys.s) {
             y += speed
           }
-          console.error(rotY,rotX)
     }
     else {
         playerMovement()
